@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.musaahotoro</groupId>
-    <artifactId>Maze_Solver</artifactId>
+    <artifactId>Maze_PathFinder</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
