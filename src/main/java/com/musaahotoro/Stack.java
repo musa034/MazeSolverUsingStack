@@ -47,7 +47,7 @@ public class Stack {
     }
 
     public Coordinate getElementAt(int index) {
-        return (Coordinate) items[index];
+        return items[index];
     }
 
 
