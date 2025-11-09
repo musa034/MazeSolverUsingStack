@@ -19,14 +19,20 @@ public class Coordinate {
         return columns;
     }
 
+    @Override
     public String toString() {
         return "(" + rows + ", " + columns + ")";
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
+        if(this == obj) {
+            return true;
+        }
+        if(obj == null || (this.getClass() != obj.getClass())) {
+            return false;
+        }
+
         Coordinate other = (Coordinate) obj;
         return this.rows == other.rows && this.columns == other.columns;
     }
