@@ -4,8 +4,8 @@ public class MazeSolver {
     final private int[][] maze;
     final private boolean[][] visited;
     final private Stack myStack;
-    final private Coordinate START;
-    final private Coordinate EXIT;
+    private Coordinate START;
+    private Coordinate EXIT;
 
     private static final int[][] directions = {
             {-1, 0},
@@ -17,9 +17,20 @@ public class MazeSolver {
     MazeSolver(int[][] maze, int size) {
         this.maze = maze;
         this.visited = new boolean[size][size];
-        this.myStack = new Stack(size*size);
-        this.START = new Coordinate(0, 1);
-        this.EXIT = new Coordinate(14, 13);
+        this.myStack = new Stack(size * size);
+
+        for(int i = 0; i < size; i++) {
+            if(maze[0][i] == 0) {
+                this.START = new Coordinate(0, i);
+                break;
+            }
+        }
+        for(int j = 0; j < size; j++) {
+            if(maze[14][j] == 0) {
+                this.EXIT = new Coordinate(14, j);
+                break;
+            }
+        }
     }
 
     public boolean solve() {
