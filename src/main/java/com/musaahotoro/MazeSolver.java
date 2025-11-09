@@ -33,16 +33,17 @@ public class MazeSolver {
         }
     }
 
-    public boolean solve() {
+    public void solve() {
         myStack.push(START);
         visited[START.getRows()][START.getColumns()] = true;
 
-        while(!myStack.isEmpty() ) {
+        while(!myStack.isEmpty()) {
             Coordinate curPosition = myStack.top();
             boolean moved = false;
 
             if(curPosition.equals(EXIT)) {
-                return true;
+                printPath();
+                return;
             }
 
             for(int[] d : directions) {
@@ -64,7 +65,7 @@ public class MazeSolver {
                 myStack.pop();
             }
         }
-        return false;
+        System.out.println("Sorry, No path found!");
     }
 
     private boolean isValidMove(int newRow, int newCol) {
